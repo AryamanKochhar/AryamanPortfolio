@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Aryaman Kochhar - Portfolio</title>
+    <!-- Link to Google Fonts for a more royal look -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <style>
+        /* Color Theme */
+        :root {
+            --primary-color: #1B263B;  /* Deep Blue */
+            --secondary-color: #E09F3E; /* Orange-Gold */
+            --dark-bg: #0D1B2A;
+            --light-bg: #EAEAEA;
+            --text-light: #fff;
+            --text-dark: #333;
+        }
+ 
+        /* General Styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--dark-bg);
+            color: var(--text-light);
+            transition: background-color 0.3s, color 0.3s;
+        }
+ 
+        /* Light Mode */
+        body.light-mode {
+            background-color: var(--light-bg);
+            color: var(--text-dark);
+        }
+ 
+        /* Smooth Scroll Navigation */
+        html {
+            scroll-behavior: smooth;
+        }
+ 
+        /* Header */
+        header {
+            background-color: var(--primary-color);
+            text-align: center;
+            padding: 50px 0;
+            position: relative;
+        }
+       
+        /* Royal Font for Name */
+        header h1 {
+            font-family: 'Playfair Display', serif; /* New font */
+            font-weight: 700; /* Bold */
+            font-size: 4rem; /* Larger size for prominence */
+            color: var(--secondary-color);
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4); /* Subtle shadow for elegance */
+        }
+ 
+        header p {
+            font-size: 1.2rem;
+            color: var(--text-light);
+        }
+ 
+        /* Theme Toggle Button */
+        .theme-toggle-btn {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            padding: 10px 20px;
+            background-color: var(--secondary-color);
+            border: none;
+            color: var(--dark-bg);
+            font-size: 1rem;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        .theme-toggle-btn:hover {
+            background-color: #D08F2C;
+        }
+ 
+        /* Animated Slide */
+        .slide-container {
+            text-align: center;
+            font-size: 2rem;
+            font-weight: bold;
+            margin: 20px 0;
+            color: var(--secondary-color);
+            overflow: hidden;
+            height: 50px;
+        }
+        .slide-text {
+            display: inline-block;
+            animation: slide 6s infinite;
+        }
+        @keyframes slide {
+            0% { transform: translateY(0); }
+            33% { transform: translateY(-50px); }
+            66% { transform: translateY(-100px); }
+            100% { transform: translateY(0); }
+        }
+ 
+        /* About Me Section */
+        #about {
+            text-align: center;
+            padding: 20px;
+        }
+ 
+        /* Skills Section */
+        #skills {
+            background-color: var(--dark-bg);
+            padding: 40px 0;
+            text-align: center;
+        }
+        #skills h2 {
+            font-size: 2rem;
+            color: var(--secondary-color);
+            margin-bottom: 20px;
+        }
+        .skill-bar {
+            width: 80%;
+            height: 25px;
+            background-color: #444;
+            border-radius: 10px;
+            margin: 10px auto;
+            position: relative;
+        }
+        .skill-bar span {
+            display: block;
+            height: 100%;
+            border-radius: 10px;
+        }
+        .skill-bar .python { width: 80%; background-color: #4CAF50; }
+        .skill-bar .cpp { width: 70%; background-color: #2196F3; }
+        .skill-bar .ml { width: 75%; background-color: #FF9800; }
+        .skill-bar .webdev { width: 60%; background-color: #FFEB3B; }
+ 
+        /* Projects Section */
+        #projects {
+            text-align: center;
+            padding: 40px 0;
+        }
+        .project-card {
+            background-color: #000;
+            border: 2px solid var(--secondary-color);
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 5px;
+        }
+        .project-card a {
+            color: var(--secondary-color);
+            text-decoration: none;
+            font-weight: bold;
+        }
+ 
+        /* Contact Section */
+        #contact {
+            text-align: center;
+            background-color: var(--dark-bg);
+            color: var(--text-light);
+            padding: 40px 0;
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeIn 1s forwards;
+        }
+        @keyframes fadeIn {
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+ 
+        #contact h2 {
+            color: var(--secondary-color);
+            margin-bottom: 20px;
+        }
+        #contact ul {
+            list-style: none;
+            padding: 0;
+        }
+        #contact ul li {
+            margin: 10px 0;
+        }
+        #contact ul li a {
+            color: var(--secondary-color);
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
+        #contact ul li a:hover {
+            color: #D08F2C;
+        }
+ 
+        .social-icons a {
+            margin: 0 15px;
+            color: var(--secondary-color);
+            text-decoration: none;
+            font-size: 1.5rem;
+            transition: transform 0.3s ease, color 0.3s ease;
+        }
+ 
+        .social-icons a:hover {
+            transform: scale(1.2);
+            color: #D08F2C;
+        }
+ 
+    </style>
+</head>
+<body>
+    <header>
+        <button class="theme-toggle-btn" onclick="toggleTheme()">Toggle Dark/Light Mode</button>
+        <h1>Aryaman Kochhar</h1>
+        <p>Passionate learner | Machine Learning | Trading | LeetCode grinder | Developer | AlgoTrading | Badminton Enthusiast | Math Enjoyer | Dramatics</p>
+    </header>
+ 
+    <div class="slide-container">
+        <div class="slide-text">PASSION</div>
+        <div class="slide-text">PERSEVERANCE</div>
+        <div class="slide-text">PERSISTENCE</div>
+    </div>
+ 
+    <section id="about">
+        <h2>About Me</h2>
+        <p>Hi, I’m Aryaman Kochhar—a passionate learner with a keen interest in machine learning, algorithmic trading, and problem-solving.</p>
+    </section>
+ 
+    <section id="skills">
+        <h2>Skills</h2>
+        <div class="skill-bar"><span class="python"></span></div>
+        <p>Python - 80%</p>
+        <div class="skill-bar"><span class="cpp"></span></div>
+        <p>C/C++ - 70%</p>
+        <div class="skill-bar"><span class="ml"></span></div>
+        <p>Machine Learning - 75%</p>
+        <div class="skill-bar"><span class="webdev"></span></div>
+        <p>Web Development - 60%</p>
+    </section>
+ 
+    <section id="projects">
+        <h2>Projects</h2>
+        <div class="project-card">
+            <h3>Water Potability Detector</h3>
+            <p>A machine learning model to determine water potability.</p>
+            <a href="https://github.com/AryamanKochhar/potabalitydetectionusingml-">View Project</a>
+        </div>
+        <div class="project-card">
+            <h3>Binance Futures and Options</h3>
+            <p>Automated trading system integrated with Binance.</p>
+            <a href="https://github.com/AryamanKochhar">View Project</a>
+        </div>
+    </section>
+ 
+    <!-- Contact Section -->
+    <section id="contact">
+        <div class="container">
+            <h2>Contact Me</h2>
+            <p>If you'd like to get in touch, feel free to drop me a message or connect with me:</p>
+            <ul>
+                <li>Email: <a href="mailto:aryamankochhar456@gmail.com">aryamankochhar456@gmail.com</a></li>
+                <li>LinkedIn: <a href="https://www.linkedin.com/in/Aryamankochhar" target="_blank">LinkedIn</a></li>
+                <li>GitHub: <a href="https://github.com/AryamanKochhar" target="_blank">GitHub</a></li>
+            </ul>
+            <div class="social-icons">
+                <a href="https://twitter.com" target="_blank">Twitter</a>
+                <a href="https://github.com" target="_blank">GitHub</a>
+                <a href="https://linkedin.com" target="_blank">LinkedIn</a>
+            </div>
+        </div>
+    </section>
+ 
+    <footer>
+        <div class="container">
+            <p>© 2025 Aryaman Kochhar. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
+ 
