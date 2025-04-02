@@ -1,42 +1,269 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
+/* Color Theme */
+:root {
+  --primary-color: #1B263B; /* Deep Blue */
+  --secondary-color: #E09F3E; /* Orange-Gold */
+  --dark-bg: #0D1B2A;
+  --light-bg: #EAEAEA;
+  --text-light: #fff;
+  --text-dark: #333;
+}
+
+/* General Styles */
+.app {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: var(--dark-bg);
+  color: var(--text-light);
+  transition: background-color 0.3s, color 0.3s;
+  position: relative;
+  min-height: 100vh;
+}
+
+/* Light Mode */
+.app.light {
+  background-color: var(--light-bg);
+  color: var(--text-dark);
+}
+
+/* Smooth Scroll */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Header */
+header {
+  background-color: var(--primary-color);
+  text-align: center;
+  padding: 50px 0;
+  position: relative;
+}
+
+header h1 {
+  font-family: 'Playfair Display', serif;
+  font-weight: 700;
+  font-size: 4rem;
+  color: var(--secondary-color);
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
+}
+
+header p {
+  font-size: 1.2rem;
+  color: var(--text-light);
+}
+
+/* Theme Toggle Button */
+.theme-toggle-btn {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  padding: 10px 20px;
+  background-color: var(--secondary-color);
+  border: none;
+  color: var(--dark-bg);
+  font-size: 1rem;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.theme-toggle-btn:hover {
+  background-color: #D08F2C;
+}
+
+/* Animated Slide */
+.slide-container {
+  text-align: center;
+  font-size: 2rem;
+  font-weight: bold;
+  margin: 20px 0;
+  color: var(--secondary-color);
+  overflow: hidden;
+  height: 50px;
+}
+
+.slide-text {
+  display: inline-block;
+}
+
+/* About Me Section */
+#about {
+  text-align: center;
+  padding: 40px 20px;
+}
+
+/* Skills Section */
+#skills {
+  background-color: var(--dark-bg);
+  padding: 40px 20px;
   text-align: center;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+#skills h2 {
+  font-size: 2rem;
+  color: var(--secondary-color);
+  margin-bottom: 20px;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
+.skill-bar {
+  width: 80%;
+  height: 25px;
+  background-color: #444;
+  border-radius: 10px;
+  margin: 10px auto;
+  position: relative;
+}
+
+.skill-bar span {
+  display: block;
+  height: 100%;
+  border-radius: 10px;
+}
+
+/* Projects Section */
+#projects, #dream-projects, #inspired-people, #favorite-books, #naval-thoughts, #market-data, #speech-crafting, #hourly-tracker, #timetable, #github-repos {
+  text-align: center;
+  padding: 40px 20px;
+}
+
+.project-card {
+  background-color: #000;
+  border: 2px solid var(--secondary-color);
+  padding: 20px;
+  margin-bottom: 20px;
+  border-radius: 5px;
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+  transition: transform 0.3s ease;
+}
+
+.project-card:hover {
+  transform: scale(1.05);
+}
+
+.project-card a {
+  color: var(--secondary-color);
+  text-decoration: none;
+  font-weight: bold;
+}
+
+/* Contact Section */
+#contact {
+  text-align: center;
+  background-color: var(--dark-bg);
+  color: var(--text-light);
+  padding: 40px 20px;
+}
+
+#contact h2 {
+  color: var(--secondary-color);
+  margin-bottom: 20px;
+}
+
+#contact ul {
+  list-style: none;
+  padding: 0;
+}
+
+#contact ul li {
+  margin: 10px 0;
+}
+
+#contact ul li a {
+  color: var(--secondary-color);
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+#contact ul li a:hover {
+  color: #D08F2C;
+}
+
+.social-icons a {
+  margin: 0 15px;
+  color: var(--secondary-color);
+  text-decoration: none;
+  font-size: 1.5rem;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.social-icons a:hover {
+  transform: scale(1.2);
+  color: #D08F2C;
+}
+
+/* New Sections */
+#inspired-people .person-card, #favorite-books .book-card, #github-repos .repo-card {
+  background-color: #000;
+  border: 2px solid var(--secondary-color);
+  padding: 20px;
+  margin-bottom: 20px;
+  border-radius: 5px;
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#market-data .market-card {
+  background-color: #000;
+  border: 2px solid var(--secondary-color);
+  padding: 20px;
+  margin-bottom: 20px;
+  border-radius: 5px;
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#chatbot {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 1000;
+}
+
+#speech-crafting .quill {
+  background-color: #fff;
+  color: #000;
+  border-radius: 5px;
+  margin: 20px auto;
+  width: 80%;
+}
+
+#hourly-tracker .tracker-entry, #timetable .calendar {
+  background-color: #000;
+  border: 2px solid var(--secondary-color);
+  padding: 20px;
+  margin-bottom: 20px;
+  border-radius: 5px;
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  header h1 {
+    font-size: 2.5rem;
   }
-  to {
-    transform: rotate(360deg);
+
+  header p {
+    font-size: 1rem;
   }
-}
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
+  .theme-toggle-btn {
+    top: 10px;
+    right: 10px;
+    padding: 8px 16px;
   }
-}
 
-.card {
-  padding: 2em;
-}
+  .slide-container {
+    font-size: 1.5rem;
+    height: 40px;
+  }
 
-.read-the-docs {
-  color: #888;
+  .skill-bar, .project-card, .person-card, .book-card, .repo-card, .market-card {
+    width: 90%;
+  }
 }

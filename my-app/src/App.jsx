@@ -1,7 +1,7 @@
 import { useState, useCallback } from 'react';
 import Particles from 'react-tsparticles';
 import { loadFull } from 'tsparticles';
-import Header from './components/Header';
+import Header from './components/header';
 import SlideText from './components/SlideText';
 import About from './components/About';
 import Skills from './components/Skills';
