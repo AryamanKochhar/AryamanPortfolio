@@ -1,0 +1,8 @@
+{
+  "dependencies": {
+    "framer-motion": "^12.6.3",
+    "react-modal": "^3.16.3",
+    "react-tsparticles": "^2.12.2",
+    "tsparticles": "^3.8.1"
+  }
+}
